@@ -1,4 +1,4 @@
-from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = client 
+from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = tgbot = client 
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
 
@@ -28,7 +28,7 @@ async def a():
          await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3"
       except:
          LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
-  if tgbot:
+  if tebot:
       try:
          await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
       except:
