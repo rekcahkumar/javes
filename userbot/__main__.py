@@ -2,6 +2,13 @@ from userbot import * ;  from sys import * ; from telethon import TelegramClient
 from userbot.modules import ALL_MODULES
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
+from importlib import import_module
+from sys import argv
+from os import execle
+
+from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
+from userbot import LOGS
+from userbot.modules import ALL_MODULES
 
 
 
