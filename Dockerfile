@@ -37,10 +37,10 @@ RUN apt-get install -y\
     python3-dev \
     python3-pip \
     libreadline-dev \
-    metasploit-framework \
-    apktool \
-    openjdk-13-jdk \
-    zipalign \
+    #metasploit-framework \
+    #apktool \
+    #openjdk-13-jdk \
+    #zipalign \
     sqlite \
     ffmpeg \
     libsqlite3-dev \
@@ -60,7 +60,7 @@ RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi
 RUN if [ ! -e /usr/bin/python ]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
 RUN rm -r /root/.cache
 
-RUN git clone https://github.com/rekcah-pavi/javes /root/userbot
+RUN git clone https://github.com/rekcahkumar/javes /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 RUN mv userbot/javes_main/extra/apktool /usr/local/bin
