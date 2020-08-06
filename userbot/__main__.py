@@ -1,4 +1,4 @@
-from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = tgbot = client 
+from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = bot.tgbot = tgbot = client 
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
 
