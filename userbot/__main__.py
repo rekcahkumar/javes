@@ -28,11 +28,11 @@ async def a():
          await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3"
       except:
          LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
- # if tgbot:
-    #  try:
-      #   await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
-   #   except:
-      #   LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
+  if tgbot:
+      try:
+         await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
+      except:
+         LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
@@ -57,18 +57,6 @@ APP_ID = config.API_KEY
 API_HASH = config.API_HASH
 
 
-async def add_bot(bot_token):
-    await bot.start(bot_token)
-    bot.me = await bot.get_me() 
-    bot.uid = telethon.utils.get_peer_id(bot.me)
-
-bot.tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=Var.APP_ID,
-            api_hash=Var.API_HASH
-        ).start(bot_token=BOT_TOKEN)
-        
-bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
 
 javes.loop.run_until_complete(a())
 
