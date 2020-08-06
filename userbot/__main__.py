@@ -1,8 +1,12 @@
-from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path, import_module ; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib ; javes = tgbot = bot.tgbot = borg = client 
+from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib ; javes = tgbot = bot.tgbot = borg = client 
 from userbot.modules import ALL_MODULES
 from telethon.tl.types import InputMessagesFilterDocument
-LOGS.info("Connecting...") ; 
+from importlib import import_module
 
+
+
+
+LOGS.info("Connecting...") ; 
 
 plugin_channel = "@pldhsys"
 
