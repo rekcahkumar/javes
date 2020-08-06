@@ -13,7 +13,7 @@ RUN apt-get install -y\
     g++ \
     git \
     aria2 \
-    util-linux \
+    #util-linux \
     libevent-dev \
     libjpeg-dev \
     libffi-dev \
