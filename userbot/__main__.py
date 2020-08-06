@@ -1,4 +1,4 @@
-from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = bot.tgbot = tgbot = client 
+from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = client 
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
 
@@ -6,7 +6,7 @@ from importlib import import_module
 
 
 #####################################
-plugin_channel = "@pldhsys"  #you can add yours :)
+plugin_channel = "@pldhsys"  #this is official plugin channel for javes 
 #####################################
 
 
@@ -28,11 +28,11 @@ async def a():
          await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3"
       except:
          LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
-  if tebot:
-      try:
-         await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
-      except:
-         LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
+ # if tgbot:
+    #  try:
+      #   await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
+   #   except:
+      #   LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
@@ -45,15 +45,30 @@ async def a():
      import_module(f"userbot.modules.{cr}")
      la += 1
      LOGS.info(f" loaded {la}/{f} modules")  
-  LOGS.info("Successfully Installed All modules")   ; os.system("rm userbot/modules/*.py") ; LOGS.info(f"Sucessfully connected with {o}{o2}{o3}{o4} check it by typing !javes in any client's chat, type  !help for more info.")
+  os.system("rm userbot/modules/*.py") ; LOGS.info(f"Sucessfully connected with {o}{o2}{o3}{o4} check it by typing !javes in any client's chat, type  !help for more info.")
   if len(argv) not in (1, 3, 4):
        await javes.disconnect()
   else:
        await javes.run_until_disconnected()
+       
+from userbot.javes_main.heroku_var import config
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+APP_ID = config.API_KEY
+API_HASH = config.API_HASH
 
 
+async def add_bot(bot_token):
+    await bot.start(bot_token)
+    bot.me = await bot.get_me() 
+    bot.uid = telethon.utils.get_peer_id(bot.me)
 
-
+bot.tgbot = TelegramClient(
+            "TG_BOT_TOKEN",
+            api_id=Var.APP_ID,
+            api_hash=Var.API_HASH
+        ).start(bot_token=BOT_TOKEN)
+        
+bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
 
 javes.loop.run_until_complete(a())
 
