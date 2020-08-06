@@ -1,12 +1,13 @@
 from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path ; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib ; javes = tgbot = bot.tgbot = borg = client 
 from userbot.modules import ALL_MODULES
 from telethon.tl.types import InputMessagesFilterDocument
-LOGS.info("Connecting...") ; o = o2 = o3 = ""
+LOGS.info("Connecting...") ; 
 
 
 plugin_channel = "@pldhsys"
 
-async def a(): 
+async def a():
+  o = o2 = o3 = ""
   try:
      await client.start() ; LOGS.info("client connected") ; o = "client1"
   except:
