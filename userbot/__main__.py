@@ -28,9 +28,9 @@ async def a():
          await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3"
       except:
          LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
-  if tgbot:
+  if tebot:
       try:
-         await tgbot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
+         await tebot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
       except:
          LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
@@ -51,12 +51,8 @@ async def a():
   else:
        await javes.run_until_disconnected()
        
-from userbot.javes_main.heroku_var import config
-BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-APP_ID = config.API_KEY
-API_HASH = config.API_HASH
 
-
+        
 
 javes.loop.run_until_complete(a())
 
