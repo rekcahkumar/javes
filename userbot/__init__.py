@@ -103,7 +103,7 @@ S2 = os.environ.get("S2", None)
 S3 = os.environ.get("S3", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 
-client2 = client3 = tgbot = None
+client2 = client3 = tebot = None
 if STRING_SESSION:
     client = TelegramClient(StringSession(STRING_SESSION),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
 else:
@@ -113,7 +113,7 @@ if S2:
 if S3:
     client3 = TelegramClient(StringSession(S3),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
 if BOT_TOKEN:    
-    tgbot = TelegramClient(StringSession(BOT_TOKEN),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
+    tebot = TelegramClient(StringSession(BOT_TOKEN),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
 
 borg = bot = javes = client
 COUNT_MSG = 0
