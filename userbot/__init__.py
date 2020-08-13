@@ -121,6 +121,7 @@ USERS = {}
 COUNT_PM = {}
 LASTMSG = {}
 CMD_HELP = {}
+OWNER = {}
 CMD_LIST = {}
 LOAD_PLUG = {}
 ISAFK = None
