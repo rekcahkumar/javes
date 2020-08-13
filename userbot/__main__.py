@@ -53,6 +53,6 @@ async def a():
        
 
         
-
-javes.loop.run_until_complete(a())
+with javes:  
+   javes.loop.run_until_complete(a())
 
