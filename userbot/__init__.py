@@ -113,13 +113,37 @@ if S2:
 if S3:
     client3 = TelegramClient(StringSession(S3),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
 if BOT_TOKEN:    
-    tebot = TelegramClient(StringSession(BOT_TOKEN),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
+    tebot = TelegramClient("bot", API_KEY, API_HASH).start(bot_token=BOT_TOKEN)
+
+
+
+owner = owner2 = owner3 = owner4 = None
+
+async def check_owners():
+      owner = await client.get_me()
+      if client2:
+          owner2 = await client2.get_me()
+      if client3:
+          owner3 = await client3.get_me()
+      if tebot:
+          owner4 = await tebot.get_me()
+with client:
+        client.loop.run_until_complete(check_owners())
+    
+
+
+
 
 borg = bot = javes = client
 COUNT_MSG = 0
 USERS = {}
-COUNT_PM = LASTMSG = CMD_HELP = CMD_LIST = LOAD_PLUG = {}
-ISAFK = AFKREASON = None
+COUNT_PM = {}
+LASTMSG = {}
+CMD_HELP = {}
+CMD_LIST = {}
+LOAD_PLUG = {}
+ISAFK = None
+AFKREASON = None
 INT_PLUG = ""
 
 
