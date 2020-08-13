@@ -119,7 +119,7 @@ if BOT_TOKEN:
 
 
 owner = owner2 = owner3 = owner4 = None
-
+borg = bot = javes = client
 
 
 
@@ -173,7 +173,7 @@ async def a():
 
 
 
-borg = bot = javes = client
+
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
