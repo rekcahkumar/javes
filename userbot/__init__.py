@@ -105,21 +105,9 @@ S3 = os.environ.get("S3", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 
 client2 = client3 = tebot = None
-if STRING_SESSION:
-    client = TelegramClient(StringSession(STRING_SESSION),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
-else:
-     quit(1)
-if S2:
-    client2 = TelegramClient(StringSession(S2),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
-if S3:
-    client3 = TelegramClient(StringSession(S3),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
-if BOT_TOKEN:    
-    tebot = TelegramClient("bot", API_KEY, API_HASH).start(bot_token=BOT_TOKEN)
 
 
 
-owner = owner2 = owner3 = owner4 = None
-borg = bot = javes = client
 
 
 
@@ -130,6 +118,17 @@ plugin_channel = "@pldhsys"  #this is official plugin channel for javes
 
 async def a():
   LOGS.info("Connecting...") ; 
+  if STRING_SESSION:
+    client = TelegramClient(StringSession(STRING_SESSION),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
+    javes = bot = borg = client
+  else:
+     quit(1)
+  if S2:
+    client2 = TelegramClient(StringSession(S2),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
+  if S3:
+    client3 = TelegramClient(StringSession(S3),API_KEY,API_HASH,connection_retries=None,auto_reconnect=False,lang_code='en')
+  if BOT_TOKEN:    
+    tebot = TelegramClient("bot", API_KEY, API_HASH).start(bot_token=BOT_TOKEN)
   o = o2 = o3 = o4 = ""
   la = 0
   try:
