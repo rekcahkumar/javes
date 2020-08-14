@@ -44,7 +44,6 @@ RUN apt-get install -y\
     sqlite \
     ffmpeg \
     libsqlite3-dev \
-    chromium \
     zlib1g-dev \
     recoverjpeg \
     zip \
