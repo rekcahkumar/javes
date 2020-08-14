@@ -64,5 +64,5 @@ RUN mv userbot/javes_main/extra/apktool.jar /usr/local/bin
 #RUN mv userbot/javes_main/extra/apk.rb /usr/share/metasploit-framework/lib/msf/core/payload
 RUN chmod +x /usr/local/bin/*
 RUN pip3 install -r requirements.txt --upgrade
-RUN sudo chmod o+r /usr/lib/python3/dist-packages/.wh.wheel-0.34.2.egg-info
+RUN sudo chmod o+r /usr/lib/python3/dist-packages/*
 CMD ["python3","-m","userbot"]
