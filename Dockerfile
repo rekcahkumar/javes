@@ -55,16 +55,9 @@ RUN apt-get install -y\
 
 RUN pip3 install --upgrade pip setuptools 
 RUN pip3 install --upgrade pip install wheel
-RUN pip3 install --upgrade pip install utils
 RUN git clone https://github.com/rekcahkumar/javes /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
-RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
-RUN chmod +x msfinstall && bash msfinstall
-RUN mv userbot/javes_main/extra/apktool /usr/local/bin
-RUN mv userbot/javes_main/extra/apktool.jar /usr/local/bin
-#RUN mv userbot/javes_main/extra/apk.rb /usr/share/metasploit-framework/lib/msf/core/payload
-RUN chmod +x /usr/local/bin/*
 RUN pip3 install --upgrade -r requirements.txt
 RUN sudo chmod o+r /usr/lib/python3/dist-packages/*
 CMD ["python3","-m","userbot"]
