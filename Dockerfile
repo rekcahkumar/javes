@@ -3,28 +3,22 @@ FROM kalilinux/kali-rolling
 RUN apt-get update && apt upgrade -y && apt-get install sudo
 
 RUN apt-get install -y\
-    coreutils \
     bash \
-    nodejs \
-    bzip2 \
+    curl \
+    ffmpeg \
+    git \
+    libjpeg-dev \
+    libjpeg62-turbo-dev \
+    libwebp-dev \
+    linux-headers-amd64 \
+    musl-dev \
+    neofetch \  
     curl \
     figlet \
     gcc \
     g++ \
     git \
     aria2 \
-    #util-linux \
-    libevent-dev \
-    libjpeg-dev \
-    libffi-dev \
-    libpq-dev \
-    libwebp-dev \
-    libxml2 \
-    libxml2-dev \
-    libxslt-dev \
-    musl \
-    neofetch \
-    libcurl4-openssl-dev \
     postgresql \
     postgresql-client \
     postgresql-server-dev-all \
