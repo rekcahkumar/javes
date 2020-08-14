@@ -3,22 +3,28 @@ FROM kalilinux/kali-rolling
 RUN apt-get update && apt upgrade -y && apt-get install sudo
 
 RUN apt-get install -y\
+    coreutils \
     bash \
-    curl \
-    ffmpeg \
-    git \
-    libjpeg-dev \
-    libjpeg62-turbo-dev \
-    libwebp-dev \
-    linux-headers-amd64 \
-    musl-dev \
-    neofetch \  
+    nodejs \
+    bzip2 \
     curl \
     figlet \
     gcc \
     g++ \
     git \
     aria2 \
+    #util-linux \
+    libevent-dev \
+    libjpeg-dev \
+    libffi-dev \
+    libpq-dev \
+    libwebp-dev \
+    libxml2 \
+    libxml2-dev \
+    libxslt-dev \
+    musl \
+    neofetch \
+    libcurl4-openssl-dev \
     postgresql \
     postgresql-client \
     postgresql-server-dev-all \
@@ -61,6 +67,5 @@ RUN mv userbot/javes_main/extra/apktool /usr/local/bin
 RUN mv userbot/javes_main/extra/apktool.jar /usr/local/bin
 #RUN mv userbot/javes_main/extra/apk.rb /usr/share/metasploit-framework/lib/msf/core/payload
 RUN chmod +x /usr/local/bin/*
-RUN pip3 install --upgrade pip
-RUN pip3 install --user -r requirements.txt
+RUN pip3 install --ignore-installed -r requirements.txt
 CMD ["python3","-m","userbot"]
