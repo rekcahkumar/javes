@@ -1,7 +1,8 @@
 
 FROM python:3.8-slim-buster
 RUN apt-get update && apt upgrade -y
-
+ENV TZ=Europe/Minsk
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install -y\
     sudo \
     coreutils \
