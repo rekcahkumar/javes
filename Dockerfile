@@ -1,5 +1,5 @@
 
-FROM python:3.8-slim-buster
+FROM ubuntu:18.04
 RUN apt-get update && apt upgrade -y
 ENV TZ=Europe/Minsk
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
