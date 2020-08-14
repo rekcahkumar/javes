@@ -38,9 +38,9 @@ RUN apt-get install -y\
     python3-pip \
     libreadline-dev \
     #metasploit-framework \
-    #apktool \
-    #openjdk-13-jdk \
-    #zipalign \
+    apktool \
+    default-jdk \
+    zipalign \
     sqlite \
     ffmpeg \
     libsqlite3-dev \
