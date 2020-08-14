@@ -15,7 +15,7 @@ async def a():
   o = o2 = o3 = o4 = ""
   la = 0
   #try:
-  await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; print(str(me.id))
+  await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; OWNER.add(str(me.id))
   #except:
     #LOGS.info("Telegram String Session Wrong or Expired Please Add new one ") ; quit(1)
   if client2:
