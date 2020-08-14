@@ -14,10 +14,10 @@ async def a():
   LOGS.info("Connecting...") ; 
   o = o2 = o3 = o4 = ""
   la = 0
-  try:
-     await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; OWNER.update({me.id})
-  except:
-    LOGS.info("Telegram String Session Wrong or Expired Please Add new one ") ; quit(1)
+  #try:
+  await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; OWNER.update({me.id})
+  #except:
+    #LOGS.info("Telegram String Session Wrong or Expired Please Add new one ") ; quit(1)
   if client2:
       try:
         await client2.start() ; LOGS.info("client2 connected") ; o2 = ", Client2"
