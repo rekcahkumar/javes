@@ -67,5 +67,5 @@ RUN mv userbot/javes_main/extra/apktool /usr/local/bin
 RUN mv userbot/javes_main/extra/apktool.jar /usr/local/bin
 #RUN mv userbot/javes_main/extra/apk.rb /usr/share/metasploit-framework/lib/msf/core/payload
 RUN chmod +x /usr/local/bin/*
-RUN pip3 install --ignore-installed -r requirements.txt
+RUN pip3 install -r requirements.txt --upgrade --ignore-installed six
 CMD ["python3","-m","userbot"]
