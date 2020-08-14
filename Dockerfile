@@ -1,8 +1,6 @@
 
 FROM python:3.8-slim-buster
 RUN apt-get update && apt upgrade -y
-ENV TZ=Europe/Minsk
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install -y\
     sudo \
     coreutils \
@@ -61,6 +59,8 @@ RUN pip3 install --upgrade pip install utils
 RUN git clone https://github.com/rekcahkumar/javes /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
+RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+RUN chmod +x msfinstall && bash msfinstall
 RUN mv userbot/javes_main/extra/apktool /usr/local/bin
 RUN mv userbot/javes_main/extra/apktool.jar /usr/local/bin
 #RUN mv userbot/javes_main/extra/apk.rb /usr/share/metasploit-framework/lib/msf/core/payload
