@@ -1,5 +1,5 @@
 
-FROM python:3.8-slim-buster
+FROM heroku/heroku:18
 RUN apt-get update && apt upgrade -y && apt-get install sudo
 
 RUN apt-get install -y\
