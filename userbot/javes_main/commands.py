@@ -28,7 +28,7 @@ def zzaacckkyy(**args):
         args["incoming"] = args.get("incoming", False)
         args["outgoing"] = True
         if "trigger_on_inline" in args:
-        del args['trigger_on_inline']
+           del args['trigger_on_inline']
         if check.via_bot_id and not trigger_on_inline:
                 return
         if bool(args["incoming"]):
