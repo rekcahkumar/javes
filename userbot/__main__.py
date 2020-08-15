@@ -15,17 +15,17 @@ async def a():
   o = o2 = o3 = o4 = ""
   la = 0
   #try:
-  await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; OWNER.add(str(me.id))
+  await client.start() ; LOGS.info("client connected") ; o = "Client1" ; me = await client.get_me() ; id = str(me.id) ; OWNER.add(int(id))
   #except:
     #LOGS.info("Telegram String Session Wrong or Expired Please Add new one ") ; quit(1)
   if client2:
       try:
-        await client2.start() ; LOGS.info("client2 connected") ; o2 = ", Client2" ; me = await client2.get_me() ; OWNER.add(str(me.id))
+        await client2.start() ; LOGS.info("client2 connected") ; o2 = ", Client2" ; me = await client2.get_me() ; id = str(me.id) ; OWNER.add(int(id))
       except:
          LOGS.info("client2 Session string Wrong/Expired Please add new string session or delete var S2") ; quit(1)
   if client3:
       try:
-         await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3" ; me = await client3.get_me() ; OWNER.add(str(me.id))
+         await client3.start() ; LOGS.info("client3 connected") ; o3 = ", Client3" ; me = await client3.get_me() ; id = str(me.id) ; OWNER.add(int(id))
       except:
          LOGS.info("client3 Session string Wrong/Expired Please add new string  or delete var S3 ") ; quit(1)
   if tebot:
