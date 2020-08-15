@@ -27,6 +27,10 @@ def zzaacckkyy(**args):
         allow_edited_updates = args.get('allow_edited_updates', False)
         args["incoming"] = args.get("incoming", False)
         args["outgoing"] = True
+        if "trigger_on_inline" in args:
+        del args['trigger_on_inline']
+        if check.via_bot_id and not trigger_on_inline:
+                return
         if bool(args["incoming"]):
             args["outgoing"] = False
         try:
@@ -147,6 +151,10 @@ def rekcah05(pattern=None, **args):
                 CMD_LIST[file_test].append(cmd)
             except:
                 CMD_LIST.update({file_test: [cmd]})
+    if "trigger_on_inline" in args:
+        del args['trigger_on_inline']
+    if check.via_bot_id and not trigger_on_inline:
+                return
     args["outgoing"] = True
     if allow_sudo:
         args["from_users"] = list(Config.SUDO_USERS)
@@ -171,6 +179,7 @@ def javess(**args):
     disable_edited = args.get('disable_edited', True)
     groups_only = args.get('groups_only', False)
     trigger_on_fwd = args.get('trigger_on_fwd', False)
+    trigger_on_inline = args.get('trigger_on_inline', False)
     disable_errors = args.get('disable_errors', False)
     reg = re.compile('(.*)')
     if not pattern == None:
@@ -188,6 +197,8 @@ def javess(**args):
              pass
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
+    if "trigger_on_inline" in args:
+        del args['trigger_on_inline']
     if "disable_edited" in args:
         del args['disable_edited']
     if "groups_only" in args:
@@ -201,6 +212,8 @@ def javess(**args):
             if LOGSPAMMER:
                 send_to = BOTLOG_CHATID
             if not trigger_on_fwd and check.fwd_from:
+                return
+            if check.via_bot_id and not trigger_on_inline:
                 return
             if groups_only and not check.is_group:
                 await check.respond("`I don't think this is a group.`")
